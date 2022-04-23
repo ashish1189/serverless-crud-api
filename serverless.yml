@@ -25,7 +25,7 @@ functions:
           path: posts/{postId}
           method: GET
     iamRoleStatements:
-      - Effevt: "Allow"
+      - Effect: "Allow"
         Action:
           - "dynamodb:GetItem"
         Resource: !GetAtt PostsTable.Arn
