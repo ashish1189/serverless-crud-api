@@ -16,7 +16,7 @@ plugins:
 
 functions:
   getPost:
-    handler: api.getPost
+    handler: src/api.getPost
     name: get-post
     memorySize: 128
     timeout: 5
@@ -30,7 +30,7 @@ functions:
           - "dynamodb:GetItem"
         Resource: !GetAtt PostsTable.Arn
   createPost:
-    handler: create.createPost
+    handler: src/create.createPost
     name: create-post
     memorySize: 128
     timeout: 5
@@ -44,7 +44,7 @@ functions:
           - "dynamodb:PutItem"
         Resource: !GetAtt PostsTable.Arn
   updatePost:
-    handler: update.updatePost
+    handler: src/update.updatePost
     name: update-post
     memorySize: 128
     timeout: 5
@@ -58,7 +58,7 @@ functions:
           - "dynamodb:UpdateItem"
         Resource: !GetAtt PostsTable.Arn
   deletePost:
-    handler: delete.deletePost
+    handler: src/delete.deletePost
     name: delete-post
     memorySize: 128
     timeout: 5
@@ -72,7 +72,7 @@ functions:
           - "dynamodb:DeleteItem"
         Resource: !GetAtt PostsTable.Arn
   getAllPost:
-    handler: api.getAllPosts
+    handler: src/api.getAllPosts
     name: get-all-posts
     memorySize: 128
     timeout: 5
