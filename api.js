@@ -47,7 +47,8 @@ const getAllPosts = async (event) => {
 
         response.body = JSON.stringify({
             message: "Successful",
-            data: (Items) ? unmarshall(Items) : {},
+            data: Items.map((item) => unmarshall(item)),
+            Items
         });
 
     } catch (error) {
