@@ -39,7 +39,7 @@ functions:
           path: posts
           method: POST
     iamRoleStatements:
-      - Effevt: "Allow"
+      - Effect: "Allow"
         Action:
           - "dynamodb:PutItem"
         Resource: !GetAtt PostsTable.Arn
@@ -53,7 +53,7 @@ functions:
           path: posts/{postId}
           method: PUT
     iamRoleStatements:
-      - Effevt: "Allow"
+      - Effect: "Allow"
         Action:
           - "dynamodb:UpdateItem"
         Resource: !GetAtt PostsTable.Arn
@@ -67,7 +67,7 @@ functions:
           path: posts/{postId}
           method: PUT
     iamRoleStatements:
-      - Effevt: "Allow"
+      - Effect: "Allow"
         Action:
           - "dynamodb:DeleteItem"
         Resource: !GetAtt PostsTable.Arn
@@ -81,7 +81,7 @@ functions:
           path: posts
           method: GET
     iamRoleStatements:
-      - Effevt: "Allow"
+      - Effect: "Allow"
         Action:
           - "dynamodb:Scan"
         Resource: !GetAtt PostsTable.Arn
