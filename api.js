@@ -138,7 +138,7 @@ const deletePost = async (event) => {
     return response;
 };
 
-const getAllPost = async (event) => {
+const getAllPosts = async (event) => {
     const response = { statusCode: 200 };
 
     try {
@@ -173,5 +173,5 @@ module.exports = {
     createPost,
     updatePost,
     deletePost,
-    getAllPost
-}
+    getAllPosts
+};
