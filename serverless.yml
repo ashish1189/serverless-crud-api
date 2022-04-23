@@ -65,7 +65,7 @@ functions:
     events:
       - http:
           path: posts/{postId}
-          method: PUT
+          method: DELETE
     iamRoleStatements:
       - Effect: "Allow"
         Action:

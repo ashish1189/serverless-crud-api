@@ -7,7 +7,7 @@ const getPost = async (event) => {
 
     try {
         const params = {
-            TableName: peocess.env.DYNAMODB_TABLE_NAME,
+            TableName: process.env.DYNAMODB_TABLE_NAME,
             Key: marshall({ postId: event.pathParameters.postId }),
         };
 
@@ -39,7 +39,7 @@ const createPost = async (event) => {
     try {
         const body = JSON.parse(event.body);
         const params = {
-            TableName: peocess.env.DYNAMODB_TABLE_NAME,
+            TableName: process.env.DYNAMODB_TABLE_NAME,
             Item: marshall(body || {}),
         };
 
@@ -112,7 +112,7 @@ const deletePost = async (event) => {
 
     try {
         const params = {
-            TableName: peocess.env.DYNAMODB_TABLE_NAME,
+            TableName: process.env.DYNAMODB_TABLE_NAME,
             Key: marshall({ postId: event.pathParameters.postId }),
         };
 
@@ -143,7 +143,7 @@ const getAllPost = async (event) => {
 
     try {
         const params = {
-            TableName: peocess.env.DYNAMODB_TABLE_NAME,
+            TableName: process.env.DYNAMODB_TABLE_NAME,
         };
 
         const { Items } = await db.send(new ScanCommand(params));
