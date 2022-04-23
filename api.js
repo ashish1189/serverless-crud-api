@@ -15,19 +15,19 @@ const getPost = async (event) => {
 
         console.log({ Item });
 
-        response.body = {
+        response.body = JSON.stringify({
             message: "Successful",
             data: (Item) ? unmarshall(Item) : {},
-        };
+        });
 
     } catch (error) {
         console.log(error);
         response.statusCode = 500;
-        response.body = {
+        response.body = JSON.stringify({
             message: "Failed to retrieve the items from database",
             error: error.message,
             stack: error.stack,
-        };
+        });
     }
 
     return response;
@@ -45,19 +45,19 @@ const getAllPosts = async (event) => {
 
         console.log({ Items });
 
-        response.body = {
+        response.body = JSON.stringify({
             message: "Successful",
             data: (Items) ? unmarshall(Items) : {},
-        };
+        });
 
     } catch (error) {
         console.log(error);
         response.statusCode = 500;
-        response.body = {
+        response.body = JSON.stringify({
             message: "Failed to retrieve all the items from database",
             error: error.message,
             stack: error.stack,
-        };
+        });
     }
 
     return response;
